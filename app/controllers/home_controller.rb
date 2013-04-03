@@ -3,4 +3,7 @@ class HomeController < ApplicationController
     @planet_names = PlanetName.trending
     
   end
+  
+  def profile
+  end
 end

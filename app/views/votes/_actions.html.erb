@@ -1,0 +1,1 @@
+<span id="actions_<%= planet.id %>"><%= button_to t(:vote), { :controller => 'votes', :action => "create", :planet_name_id => planet.id}, :remote => true %></span>

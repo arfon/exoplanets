@@ -1,0 +1,1 @@
+$("#actions_<%= @planet.id %>").replace_html('<%= escape_javascript render :partial => "actions", :locals => { :planet => @planet } %>');
