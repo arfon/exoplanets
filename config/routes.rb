@@ -51,6 +51,9 @@ Exoplanets::Application.routes.draw do
   
   resources :votes
   
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
