@@ -3,6 +3,7 @@ class PlanetName < ActiveRecord::Base
   # TODO - add counter cache fields for votes
   
   attr_accessible :name, :explanation, :user, :status
+  validates_presence_of :name
   
   has_many :votes
   has_many :voters, :through => :votes, :source => :user
@@ -17,9 +18,9 @@ class PlanetName < ActiveRecord::Base
     limit(10)
   end
   
-  # state_machine :status, :initial => :active do
-  #   # event :reject do
-  #   #   transition :active => :rejected
-  #   # end
-  # end
+  state_machine :status, :initial => :active do
+    # event :reject do
+    #   transition :active => :rejected
+    # end
+  end
 end

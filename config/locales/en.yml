@@ -4,3 +4,7 @@
 en:
   vote: "Vote for this name"
   votes: "vote"
+  suggest: "Suggest a new planet name"
+  name: "Planet Name"
+  explanation: "Explanation"
+  name_save_error: "Could not save planet name"

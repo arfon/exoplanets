@@ -50,6 +50,7 @@ Exoplanets::Application.routes.draw do
   # just remember to delete public/index.html.
   
   resources :votes
+  resources :names, :as => :names, :controller => :planet_names
   
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')

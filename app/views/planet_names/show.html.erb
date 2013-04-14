@@ -1,0 +1,1 @@
+<%= @planet.name %> (<%= @planet.user.name %> &middot; <%= pluralize(@planet.votes.count, t(:votes)) %>) <%= render :partial => "votes/actions", :locals => { :planet => @planet } %>

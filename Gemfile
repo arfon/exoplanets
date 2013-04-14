@@ -10,6 +10,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'pry'
 gem "pg", :group => :production
+gem 'state_machine'
 
 # Gems used only for assets and not required
 # in production environments by default.

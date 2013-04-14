@@ -1,0 +1,9 @@
+<%= t(:suggest) %>
+
+<%= form_for @name, :url => names_path do |f| %>
+  <%= f.label :name, t(:name) %>:
+  <%= f.text_field :name %><br />
+  <%= f.label :explanation, 'Explanation' %>:
+  <%= f.text_field :explanation %><br />
+  <%= f.submit %>
+<% end %>
