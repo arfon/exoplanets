@@ -5,6 +5,7 @@ class Vote < ActiveRecord::Base
   belongs_to :planet_name
   
   before_create :check_voter
+  after_create :increment_planet_vote_count
   
   def check_voter
     if self.user == self.planet_name.suggestor
@@ -14,5 +15,9 @@ class Vote < ActiveRecord::Base
     else
       return true
     end
+  end
+  
+  def increment_planet_vote_count
+    self.planet.increment_counter(:vote_count, 1)
   end
 end

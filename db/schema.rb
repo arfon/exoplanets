@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413195818) do
+ActiveRecord::Schema.define(:version => 20130414004630) do
 
   create_table "planet_names", :force => true do |t|
     t.string   "name"
     t.text     "explanation"
     t.string   "status"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.integer  "vote_count",  :default => 0
   end
 
   add_index "planet_names", ["status"], :name => "index_planet_names_on_status"

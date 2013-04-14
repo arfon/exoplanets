@@ -11,6 +11,7 @@ gem 'omniauth-facebook'
 gem 'pry'
 gem "pg", :group => :production
 gem 'state_machine'
+gem 'factory_girl_rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
