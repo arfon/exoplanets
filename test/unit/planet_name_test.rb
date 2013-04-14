@@ -2,6 +2,13 @@ require 'test_helper'
 
 class PlanetNameTest < ActiveSupport::TestCase
   context "A Planet Name" do
+    should have_many :votes
+    should have_many(:voters).through(:votes)
+    should belong_to :user
+    
+  end
+
+  context "A Planet Name" do
     setup do
       @planet = FactoryGirl.create :planet_name
     end

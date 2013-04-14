@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class VoteTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context "A Vote" do
+    should belong_to :planet_name
+    should belong_to :user
+  end
 end
