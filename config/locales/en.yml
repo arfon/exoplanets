@@ -8,3 +8,4 @@ en:
   name: "Planet Name"
   explanation: "Explanation"
   name_save_error: "Could not save planet name"
+  require_login: "You must be logged in to vote"

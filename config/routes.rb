@@ -52,6 +52,7 @@ Exoplanets::Application.routes.draw do
   resources :votes
   resources :names, :as => :names, :controller => :planet_names
   
+  match 'sessions/new', to: 'sessions#new', as: 'new_session'
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'

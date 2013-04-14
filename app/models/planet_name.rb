@@ -15,7 +15,7 @@ class PlanetName < ActiveRecord::Base
   end
   
   def self.trending
-    limit(10)
+    limit(10).order(:vote_count)
   end
   
   state_machine :status, :initial => :active do

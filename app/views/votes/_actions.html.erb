@@ -1,1 +1,5 @@
+<%- if current_user -%>
 <span id="actions_<%= planet.id %>"><%= button_to t(:vote), { :controller => 'votes', :action => "create", :planet_name_id => planet.id}, :remote => true %></span>
+<%- else -%>
+  <%= t(:require_login) %>. <%= link_to t(:login), new_session_path %>
+<%- end -%>
