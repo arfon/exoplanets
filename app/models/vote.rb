@@ -18,6 +18,6 @@ class Vote < ActiveRecord::Base
   end
   
   def increment_planet_vote_count
-    self.planet.increment_counter(:vote_count, 1)
+    self.planet_name.increment_counter(:vote_count, 1)
   end
 end
