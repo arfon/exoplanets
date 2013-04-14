@@ -5,8 +5,13 @@ FactoryGirl.define do
     n
   end
   
+  factory :user do |u|
+    u.name  { |user| user.name = "User #{ FactoryGirl.generate(:name) }" }
+  end
+  
   factory :planet_name do |p|
     p.name   { |planet| planet.name = "Planet #{ FactoryGirl.generate(:name) }" }
     p.explanation   "A very good reason"
+    user
   end
 end
