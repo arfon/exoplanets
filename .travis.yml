@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - "1.9.3"
+before_script:
+  - mysql -e 'create database exoplanets_test;'
+  - bundle install
+  - rake db:schema:load
+branches:
+  only:
+    - master
+  
+# uncomment this line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
