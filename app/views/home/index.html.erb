@@ -1,5 +1,5 @@
 <%- @planet_names.each do |planet| -%>
-  <p><%= planet.name %> (Suggested by: <%= planet.user.name %> &middot; <%= pluralize(planet.votes.count, t(:votes)) %>) <%= render :partial => "votes/actions", :locals => { :planet => planet } %></p>
+  <p><%= planet.name %> <div id="actions_<%= planet.id %>"><%= render :partial => "votes/actions", :locals => { :planet => planet } %></div></p>
 <%- end -%>
 
 <%= link_to t(:suggest), new_name_path %>
