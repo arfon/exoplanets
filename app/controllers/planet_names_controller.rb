@@ -3,6 +3,7 @@ class PlanetNamesController < ApplicationController
   
   def new
     @name = PlanetName.new
+    @planets = Planet.for_naming
   end
   
   def create

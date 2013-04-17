@@ -2,13 +2,14 @@ class PlanetName < ActiveRecord::Base
   # FIXME - status should be set by state machine
   # TODO - add counter cache fields for votes
   
-  attr_accessible :name, :explanation, :user
+  attr_accessible :name, :explanation, :user, :planet_id
   validates_presence_of :name, :user_id
   
   has_many :votes
   has_many :voters, :through => :votes, :source => :user
   
   belongs_to :user
+  belongs_to :planet
   
   def suggestor
     user

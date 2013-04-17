@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414004630) do
+ActiveRecord::Schema.define(:version => 20130417204053) do
 
   create_table "planet_names", :force => true do |t|
     t.string   "name"
@@ -21,10 +21,28 @@ ActiveRecord::Schema.define(:version => 20130414004630) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.integer  "vote_count",  :default => 0
+    t.integer  "planet_id"
   end
 
   add_index "planet_names", ["status"], :name => "index_planet_names_on_status"
   add_index "planet_names", ["user_id"], :name => "index_planet_names_on_user_id"
+
+  create_table "planets", :force => true do |t|
+    t.string   "host_name"
+    t.string   "planet_letter"
+    t.string   "discovery_method"
+    t.string   "orbital_period"
+    t.string   "planet_mass"
+    t.string   "planet_radius"
+    t.string   "ra"
+    t.string   "dec"
+    t.string   "hd_host_name"
+    t.string   "status"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "planets", ["status"], :name => "index_planets_on_status"
 
   create_table "users", :force => true do |t|
     t.string   "name"
