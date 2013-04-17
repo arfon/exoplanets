@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @planet_names = PlanetName.trending
+    @planets = Planet.for_naming
   end
   
   def profile

@@ -11,6 +11,8 @@ class PlanetName < ActiveRecord::Base
   belongs_to :user
   belongs_to :planet
   
+  default_scope order('vote_count DESC')
+  
   def suggestor
     user
   end

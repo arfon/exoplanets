@@ -1,5 +1,11 @@
-<%- @planet_names.each do |planet| -%>
-  <p><%= planet.name %> <div id="actions_<%= planet.id %>"><%= render :partial => "votes/actions", :locals => { :planet => planet } %></div></p>
+<%- @planets.each do |planet| -%>
+  <h3>Planet: <%= planet.host_name %></h3>
+  <%- if planet.planet_names.any? -%>
+    <%- planet.planet_names.each do |planet| -%>
+      <p><%= planet.name %> <div id="actions_<%= planet.id %>"><%= render :partial => "votes/actions", :locals => { :planet => planet } %></div></p>
+    <%- end -%>
+  <%- else -%>
+  <p>There aren't any names to vote on for this planet yet. <%= link_to t(:suggest), new_name_path(:planet_id => planet.id) %></p>
+  <%- end -%>
 <%- end -%>
 
-<%= link_to t(:suggest), new_name_path %>

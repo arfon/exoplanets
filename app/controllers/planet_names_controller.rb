@@ -1,6 +1,6 @@
 class PlanetNamesController < ApplicationController
   before_filter :require_user, :except => :show
-  
+    
   def new
     @name = PlanetName.new
     @planets = Planet.for_naming
