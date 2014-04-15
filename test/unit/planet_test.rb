@@ -12,7 +12,10 @@ class PlanetTest < ActiveSupport::TestCase
       should "have a state of #active" do
         assert_equal 'inactive', @planet.status
       end
-    end
 
+      should "not be available for naming" do
+        assert !Planet.for_naming.include?(@planet)
+      end
+    end
   end
 end
