@@ -20,15 +20,15 @@ class User < ActiveRecord::Base
     end
   end
   
-  def suggestor_for?(planet)
-    planet.suggestor == self
+  def suggestor_for?(planet_name)
+    planet_name.suggestor == self
   end
   
-  def voter_for?(planet)
-    Vote.where(:user_id => self.id, :planet_name_id => planet.id).exists?
+  def voter_for?(planet_name)
+    Vote.where(:user_id => self.id, :planet_name_id => planet_name.id).exists?
   end
   
-  def vote_for(planet)
-    Vote.create(:user => self, :planet_name => planet) unless planet.suggestor == self
+  def vote_for(planet_name)
+    Vote.create(:user => self, :planet_name => planet_name) unless planet_name.suggestor == self
   end
 end
