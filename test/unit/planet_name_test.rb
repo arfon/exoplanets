@@ -5,6 +5,7 @@ class PlanetNameTest < ActiveSupport::TestCase
     should have_many :votes
     should have_many(:voters).through(:votes)
     should belong_to :user
+    should belong_to :planet
     
   end
 
