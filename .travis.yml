@@ -4,7 +4,9 @@ rvm:
 before_script:
   - mysql -e 'create database exoplanets_test;'
   - bundle install
-  - rake db:schema:load
+  - bundle exex rake db:schema:load
 branches:
   only:
     - master
+
+script: bundle exec rake
